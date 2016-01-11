@@ -1,20 +1,13 @@
 var fs = require('fs')
 var gm = require('gm')
 var extract = require('./dataextract.js')
+var ocrr = require('./route/ocr.js')
 
-
-module.exports.cropimage = function (height,width,x,y) {
-
-	gm('/home/spoorthi/Desktop/Invoice-Template-Nsuay7z.jpg')
+module.exports.cropimage = function (width,height,x,y,src,dst) {
+    gm(src)
 	.crop(height, width, x, y)
-	.write('/home/spoorthi/Invoice-Template-Nsuay7z2.jpg', function (err) {
+	.write(dst, function (err) {
            if (!err) console.log('crop done')
-           extract.dataextract()
+           extract.dataextract(dst)
     })
-}
-
-
-
-
-
-
+ 

@@ -1,8 +1,8 @@
 var tesseract = require('node-tesseract')
 
-module.exports.dataextract = function () {
+module.exports.dataextract = function (src) {
 
-	tesseract.process(__dirname + '/../Invoice-Template-Nsuay7z2.jpg',function(err, text) {
+	tesseract.process(src,function(err, text) {
 	if(err) {
 		console.error(err)
 	} else {
@@ -11,3 +11,5 @@ module.exports.dataextract = function () {
   })
 
 }
+
+

@@ -5,24 +5,32 @@ var Schema = mongoose.Schema
 module.exports = mongoose.model('ocrDb', new Schema(
   {
   	header:{
-  		       x: { type: Number, required: true },
-               y: { type: Number, required: true },
-               height: { type: Number, required: true },
-               width: { type: Number, required: true }
+  		       x:  Number, 
+               y:  Number, 
+               height:  Number, 
+               width:  Number
   	        },
     
     body:{
-    		   x: { type: Number, required: true },
-               y: { type: Number, required: true },
-               height: { type: Number, required: true },
-               width: { type: Number, required: true }
+    	         x:  Number, 
+               y:  Number, 
+               height:  Number, 
+               width:  Number, 
+
+               header:[{
+                       attr:  String, 
+                       x:  Number,
+                      y: Number,
+                      height:  Number, 
+                      width:  Number
+               }]
         },
 
     footer:{
-    		   x: { type: Number, required: true },
-               y: { type: Number, required: true },
-               height: { type: Number, required: true },
-               width: { type: Number, required: true }
+    		   x:  Number,
+               y:  Number, 
+               height:  Number, 
+               width:Number
         }
     }
 ))
